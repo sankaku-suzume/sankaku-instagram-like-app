@@ -27,6 +27,7 @@ gem 'jbuilder'
 gem 'devise', '~> 4.9'
 gem 'hamlit'
 gem 'haml-rails', '~> 2.0'
+gem 'sassc-rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
