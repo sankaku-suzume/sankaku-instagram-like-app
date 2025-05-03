@@ -1,0 +1,22 @@
+@import './variables'; 
+
+.btn-primary {
+  background-color: $button-color;
+  border: none;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  padding: 14px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-secondary {
+  background-color: white;
+  border: solid 1px $button-color;
+  width: 100%;
+  text-align: center;
+  color: $button-color;
+  padding: 16px 0;
+  font-weight: bold;
+}
