@@ -3,6 +3,7 @@
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.27.1",
+    "@babel/plugin-transform-private-methods": "^7.27.1",
     "@babel/preset-env": "^7.27.2",
     "babel-loader": "^10.0.0",
     "webpack": "^5.99.7",
