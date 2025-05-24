@@ -16,6 +16,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.13",
-    "@rails/webpacker": "^5.4.4"
+    "@rails/webpacker": "^5.4.4",
+    "jquery": "^3.7.1"
   }
 }
