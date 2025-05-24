@@ -2,6 +2,3 @@
 import "@hotwired/turbo-rails"
 import "../controllers"
 
-document.addEventListener('turbo:load', () => {
-  window.alert('DOM LOADED')
-})
