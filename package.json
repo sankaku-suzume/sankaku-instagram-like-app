@@ -2,14 +2,21 @@
   "name": "app",
   "private": true,
   "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/plugin-transform-private-methods": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "babel-loader": "^10.0.0",
     "webpack": "^5.99.7",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^8.0.13"
+    "@hotwired/turbo-rails": "^8.0.13",
+    "@rails/webpacker": "^5.4.4",
+    "jquery": "^3.7.1"
   }
 }

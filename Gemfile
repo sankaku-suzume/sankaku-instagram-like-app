@@ -28,6 +28,8 @@ gem 'devise', '~> 4.9'
 gem 'hamlit'
 gem 'haml-rails', '~> 2.0'
 gem 'sassc-rails'
+gem 'webpacker', '~> 4.0', '>= 4.0.7'
+gem 'psych', '~> 3.1'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
