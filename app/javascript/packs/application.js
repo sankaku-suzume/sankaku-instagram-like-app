@@ -2,3 +2,7 @@
 import "@hotwired/turbo-rails"
 import "../controllers"
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.alert('DOM LOADED')
+})

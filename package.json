@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "@hotwired/turbo-rails": "^8.0.13",
     "@rails/webpacker": "^5.4.4",
     "jquery": "^3.7.1"
