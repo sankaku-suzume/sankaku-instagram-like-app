@@ -2,6 +2,19 @@
 import "@hotwired/turbo-rails"
 import "../controllers"
 
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
+import $ from 'jquery'
+import axios from "axios"
+window.axios = axios
+
+
 document.addEventListener('turbo:load', () => {
-  window.alert('DOM LOADED')
+  $('.profilePage_header_account').on('click', () => {
+    axios.get('/')
+      .then((response) => {
+        console.log(response)
+      })
+  })
 })
