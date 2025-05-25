@@ -28,11 +28,12 @@ module.exports = function(api) {
       (isProductionEnv || isDevelopmentEnv) && [
         '@babel/preset-env',
         {
-          forceAllTransforms: true,
+          // forceAllTransforms: true,
           useBuiltIns: 'entry',
           corejs: 3,
           modules: false,
-          exclude: ['transform-typeof-symbol']
+          // exclude: ['transform-typeof-symbol']
+          targets: { browsers: 'defaults' }
         }
       ]
     ].filter(Boolean),
@@ -68,15 +69,9 @@ module.exports = function(api) {
       [
         '@babel/plugin-transform-runtime',
         {
-          helpers: false,
+          helpers: true,
           regenerator: true,
-          corejs: false
-        }
-      ],
-      [
-        '@babel/plugin-transform-regenerator',
-        {
-          async: false
+          corejs: 3
         }
       ]
     ].filter(Boolean)
