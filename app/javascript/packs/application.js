@@ -2,7 +2,11 @@
 import "@hotwired/turbo-rails"
 import "../controllers"
 
+import $ from 'jquery'
+
 
 document.addEventListener('DOMContentLoaded', () => {
-  window.alert('DOM LOADED')
+  $('.profilePage_header_account').on('click', () => {
+    window.alert('clicked')
+  })
 })
