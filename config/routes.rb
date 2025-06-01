@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root 'home#index'
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: [ :show, :edit, :update ]
 end
