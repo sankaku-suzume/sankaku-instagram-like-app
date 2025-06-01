@@ -2,6 +2,16 @@
   .profilePage_header
     .profilePage_header_back-icon
       = image_tag 'back.png'
+      .container.profile-form-container.hidden
+        %ul
+          - @profile.errors.full_messages.each do |message|
+            %li= message
+        
+        = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+          %div
+            = f.file_field :avatar
+          = f.submit 'submit', class: 'btn-primary', id: 'submit-avatar-btn'
+
     %h2.profilePage_header_account= current_user.account
   .profilePage_user
     .profilePage_user_image
@@ -19,3 +29,6 @@
         44
         %br/
         %span.profilePage_user_unit Following
+
+
+= javascript_pack_tag 'profile'
