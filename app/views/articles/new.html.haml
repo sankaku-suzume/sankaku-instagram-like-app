@@ -1,0 +1,22 @@
+.container
+  .header
+    .header_left
+      = link_to 'Cancel', articles_path
+    %h2.header_center Status
+    .header_right Post
+  .articlePost
+    .articlePost_user
+      .articlePost_userImage
+        = image_tag current_user.avatar_image
+      .articlePost_userName= current_user.account
+    .articlePost_form
+      %ul
+        - @article.errors.full_messages.each do |message|
+          %li= message
+      = form_with(model: @article, local: true) do |f|
+        %div
+          = f.text_area :content, placeholder: "What's on your mind ?"
+        %div
+          = f.file_field :images, multiple: true
+        %div.articlePost_submit
+        = f.submit 'Submit', id: 'article-submit-btn'
