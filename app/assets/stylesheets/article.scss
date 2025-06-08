@@ -1,10 +1,127 @@
 @import 'variables';
+// index
+.articles_headerLeft {
+  width: 20px;
+  height: 20px;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.articles_main {
+  margin-top: 22px;
+}
+
+.articles_article {
+  padding: 18px 0;
+}
+
+.articles_articleUser {
+  display: flex;
+  gap: 8px;
+  height: 40px;
+}
+
+.articles_articleUserAvatar {
+  width: 30px;
+  height: 30px;
+  position: relative;
+
+  img {
+    content: "";
+    position: absolute;
+    width: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.articles_articleUserAccount {
+  font-size: 14px;
+  font-weight: 500; 
+}
+
+.articles_articlePostTime {
+  font-size: 12px;
+  color: $text-inactive-color;
+}
+
+.articles_articleImages {
+  margin-top: 12px;
+  width: 100%;
+  aspect-ratio: 343 / 225;
+  display: grid;
+  gap: 7px;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.articles_articleImage {
+  width: 100%;
+  overflow: hidden;
+
+  &.big {
+    grid-column: 1 / 3;
+  }
+
+  &:first-child {
+    grid-row: 1 / 3;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.articles_articleReaction {
+  margin-top: 12px;
+  display: flex;
+  gap: 14px;
+}
+
+.articles_articleIcon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.articles_articleLikesCount {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.articles_articleComment {
+  font-size: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.articles_articleCommentUser {
+  font-weight: 500;
+}
+
 
 //articlePost
 .articlePost_main {
-  width: 100%;
-  max-width: 343px;
-  margin-inline: auto;
   margin-top: 40px;
 }
 
@@ -33,6 +150,7 @@
 
 .articlePost_userName {
   line-height: 40px;
+  font-weight: 500;
 }
 
 .articlePost_form {

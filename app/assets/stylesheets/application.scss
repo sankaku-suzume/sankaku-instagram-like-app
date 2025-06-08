@@ -40,6 +40,12 @@ body {
   width: 100%;
 }
 
+.main {
+  width: 100%;
+  max-width: 343px;
+  margin-inline: auto;
+}
+
 .hidden {
   display: none;
 }

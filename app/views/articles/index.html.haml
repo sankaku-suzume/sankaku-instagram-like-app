@@ -1,1 +1,35 @@
-home 
+.container 
+  .articles_header.header
+    .articles_headerLeft.header_left
+      = image_tag 'photo-camera.png'
+  .articles_main.main
+    - @articles.each do |article|
+      .articles_article
+        .articles_articleUser
+          .articles_articleUserAvatar
+            = image_tag article.user.avatar_image
+          .articles_articleUserInfo 
+            .articles_articleUserAccount= article.user.account
+            .articles_articlePostTime 3 hours ago
+        .articles_articleImages
+          - if article.images.length <= 1
+            - article.images.each do |image|
+              .articles_articleImage.big
+                = image_tag image
+          - else 
+            - article.images.each_with_index do |image, i|
+              .articles_articleImage
+                = image_tag image
+              - break if i== 2
+        .articles_articleReaction
+          .articles_articleLikeIcon.articles_articleIcon
+            = image_tag 'Like-inactive.png'
+          .articles_articleCommentIcon.articles_articleIcon
+            = image_tag 'Comment.png'
+          .articles_articleShareIcon.articles_articleIcon
+            = image_tag 'share.png'
+        .articles_articleLikesCount Jasmine and 12,000 other liked your post
+        .articles_articleComments
+          .articles_articleComment
+            .articles_articleCommentUser= article.user.account
+            .articles_articleCommentContent= article.content
