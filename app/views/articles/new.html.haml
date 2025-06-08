@@ -1,9 +1,9 @@
 .container
-  .header
-    .header_left
+  .articlePost_header.header
+    .articlePost_headerLeft.header_left
       = link_to 'Cancel', articles_path
-    %h2.header_center Status
-    .header_right Post
+    %h2.articlePost_headerCenter.header_center Status
+    .articlePost_headerRight.header_right Post
   .articlePost
     .articlePost_user
       .articlePost_userImage
@@ -15,8 +15,8 @@
           %li= message
       = form_with(model: @article, local: true) do |f|
         %div
-          = f.text_area :content, placeholder: "What's on your mind ?"
-        %div
+          = f.text_area :content, placeholder: "What's on your mind ?", class: 'articlePost_textarea'
+        %div.articlePost_images_wrapper
           = f.file_field :images, multiple: true
         %div.articlePost_submit
-        = f.submit 'Submit', id: 'article-submit-btn'
+          = f.submit 'Submit', id: 'article-submit-btn'
