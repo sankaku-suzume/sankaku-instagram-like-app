@@ -17,7 +17,6 @@ $('.profilePage_user_image').on('click', () => {
   $('#profile_avatar').trigger('click')
 })
 
-$('#profile_avatar').change(function() {
+$('#profile_avatar').on('change', () => {
   $('#submit-avatar-btn').trigger('click')
-
 })

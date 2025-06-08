@@ -1,10 +1,10 @@
 .container
   .articlePost_header.header
-    .articlePost_headerLeft.header_left
+    .articlePost_headerLeft.header_left.active
       = link_to 'Cancel', articles_path
     %h2.articlePost_headerCenter.header_center Status
-    .articlePost_headerRight.header_right Post
-  .articlePost
+    .articlePost_headerRight.header_right#articlePost-post-btn Post
+  .articlePost_main
     .articlePost_user
       .articlePost_userImage
         = image_tag current_user.avatar_image
@@ -17,6 +17,8 @@
         %div
           = f.text_area :content, placeholder: "What's on your mind ?", class: 'articlePost_textarea'
         %div.articlePost_images_wrapper
-          = f.file_field :images, multiple: true
+          = f.file_field :images, multiple: true, id: 'articlePost-input-images'
         %div.articlePost_submit
-          = f.submit 'Submit', id: 'article-submit-btn'
+          = f.submit 'Submit', id: 'articlePost-submit-btn'
+
+= javascript_pack_tag 'article'

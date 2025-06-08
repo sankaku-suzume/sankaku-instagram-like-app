@@ -10,8 +10,12 @@
 }
 
 .header_left {
-  color: $text-link-color;
-  width: 100px;
+  color: $text-inactive-color;
+  width: 50px;
+
+  &.active {
+    color: $text-link-color;
+  }
 }
 
 .header_center {
@@ -22,8 +26,12 @@
 }
 
 .header_right {
-  cursor: pointer;
   color: $text-inactive-color;
-  width: 100px;
+  width: 50px;
   text-align: right;
+
+  &.active {
+    color: $text-link-color;
+    cursor: pointer;
+  }
 }
