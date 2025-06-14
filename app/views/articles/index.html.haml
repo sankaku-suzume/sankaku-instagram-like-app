@@ -10,7 +10,7 @@
             = image_tag article.user.avatar_image
           .articles_articleUserInfo 
             .articles_articleUserAccount= article.user.account
-            .articles_articlePostTime 3 hours ago
+            .articles_articlePostTime= article.elapsed_time(article)
         .articles_articleImages
           - if article.images.length <= 1
             - article.images.each do |image|
