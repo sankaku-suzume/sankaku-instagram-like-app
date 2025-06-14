@@ -1,0 +1,7 @@
+.container 
+  .article_header.header
+    .article_headerLeft.header_left
+      = image_tag 'photo-camera.png'
+  .article_main.main
+    - @articles.each do |article|
+      = render 'article', article: article

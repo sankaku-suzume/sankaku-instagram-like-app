@@ -1,0 +1,37 @@
+@import 'variables';
+
+.header {
+  width: 100%;
+  max-width: 343px;
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+  margin-top: 28px;
+}
+
+.header_left {
+  color: $text-inactive-color;
+  width: 50px;
+
+  &.active {
+    color: $text-link-color;
+  }
+}
+
+.header_center {
+  font-size: 16px;
+  font-weight: 400;
+  width: 100px;
+  text-align: center;
+}
+
+.header_right {
+  color: $text-inactive-color;
+  width: 50px;
+  text-align: right;
+
+  &.active {
+    color: $text-link-color;
+    cursor: pointer;
+  }
+}
