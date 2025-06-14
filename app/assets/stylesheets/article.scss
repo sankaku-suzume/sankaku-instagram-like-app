@@ -1,6 +1,6 @@
 @import 'variables';
 // index
-.articles_headerLeft {
+.article_headerLeft {
   width: 20px;
   height: 20px;
 
@@ -10,21 +10,21 @@
   }
 }
 
-.articles_main {
+.article_main {
   margin-top: 22px;
 }
 
-.articles_article {
+.article_article {
   padding: 18px 0;
 }
 
-.articles_articleUser {
+.article_articleUser {
   display: flex;
   gap: 8px;
   height: 40px;
 }
 
-.articles_articleUserAvatar {
+.article_articleUserAvatar {
   width: 30px;
   height: 30px;
   position: relative;
@@ -42,17 +42,17 @@
   }
 }
 
-.articles_articleUserAccount {
+.article_articleUserAccount {
   font-size: 14px;
   font-weight: 500; 
 }
 
-.articles_articlePostTime {
+.article_articlePostTime {
   font-size: 12px;
   color: $text-inactive-color;
 }
 
-.articles_articleImages {
+.article_articleImages {
   margin-top: 12px;
   width: 100%;
   aspect-ratio: 343 / 225;
@@ -62,7 +62,7 @@
   grid-template-rows: 1fr 1fr;
 }
 
-.articles_articleImage {
+.article_articleImage {
   width: 100%;
   overflow: hidden;
 
@@ -85,13 +85,13 @@
   }
 }
 
-.articles_articleReaction {
+.article_articleReaction {
   margin-top: 12px;
   display: flex;
   gap: 14px;
 }
 
-.articles_articleIcon {
+.article_articleIcon {
   width: 16px;
   height: 16px;
   cursor: pointer;
@@ -103,19 +103,19 @@
   }
 }
 
-.articles_articleLikesCount {
+.article_articleLikesCount {
   margin-top: 8px;
   font-size: 12px;
   font-weight: 500;
 }
 
-.articles_articleComment {
+.article_articleComment {
   font-size: 12px;
   display: flex;
   gap: 8px;
 }
 
-.articles_articleCommentUser {
+.article_articleCommentUser {
   font-weight: 500;
 }
 

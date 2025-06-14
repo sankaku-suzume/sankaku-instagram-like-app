@@ -1,6 +1,12 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show]
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @articles = Article.all.order(updated_at: :desc)
+  end
+
+  def show
   end
 
   def new
@@ -20,5 +26,9 @@ class ArticlesController < ApplicationController
   private
   def article_params
     params.require(:article).permit(:content, images: [])
+  end
+
+  def set_article
+    @article = Article.find(params[:id])
   end
 end

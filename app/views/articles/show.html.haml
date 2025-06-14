@@ -1,0 +1,7 @@
+.container
+  .article_header.header
+    = link_to articles_path do
+      .article_headerLeft.header_left
+        = image_tag 'back.png'
+  .article_main.main
+    = render 'article', article: @article

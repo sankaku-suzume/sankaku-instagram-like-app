@@ -1,0 +1,29 @@
+.article_article
+  .article_articleUser
+    .article_articleUserAvatar
+      = image_tag article.user.avatar_image
+    .article_articleUserInfo 
+      .article_articleUserAccount= article.user.account
+      .article_articlePostTime= article.elapsed_time(article)
+  .article_articleImages
+    - if article.images.length <= 1
+      - article.images.each do |image|
+        .article_articleImage.big
+          = image_tag image
+    - else 
+      - article.images.each_with_index do |image, i|
+        .article_articleImage
+          = image_tag image
+        - break if i== 2
+  .article_articleReaction
+    .article_articleLikeIcon.article_articleIcon
+      = image_tag 'Like-inactive.png'
+    .article_articleCommentIcon.article_articleIcon
+      = image_tag 'Comment.png'
+    .article_articleShareIcon.article_articleIcon
+      = image_tag 'share.png'
+  .article_articleLikesCount Jasmine and 12,000 other liked your post
+  .article_articleComments
+    .article_articleComment
+      .article_articleCommentUser= article.user.account
+      .article_articleCommentContent= article.content
