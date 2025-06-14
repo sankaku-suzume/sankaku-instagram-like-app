@@ -23,6 +23,23 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    @article = current_user.articles.find(params[:id])
+  end
+
+  def update
+    @article = current_user.articles.find(params[:id])
+    if @article.update(article_params)
+      redirect_to article_path(@article), notice: 'Successfully updated.'
+    else
+      flash.now[:error] = 'Failed to update'
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+  end
+
   private
   def article_params
     params.require(:article).permit(:content, images: [])

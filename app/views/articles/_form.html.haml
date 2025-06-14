@@ -1,0 +1,24 @@
+.container
+  .articlePost_header.header
+    .articlePost_headerLeft.header_left.active
+      = link_to 'Cancel', articles_path
+    %h2.articlePost_headerCenter.header_center Status
+    .articlePost_headerRight.header_right#articlePost-post-btn Post
+  .articlePost_main.main
+    .articlePost_user
+      .articlePost_userImage
+        = image_tag current_user.avatar_image
+      .articlePost_userName= current_user.account
+    .articlePost_form
+      %ul
+        - @article.errors.full_messages.each do |message|
+          %li= message
+      = form_with(model: article, local: true) do |f|
+        %div
+          = f.text_area :content, placeholder: "What's on your mind ?", class: 'articlePost_textarea'
+        %div.articlePost_images_wrapper
+          = f.file_field :images, multiple: true, id: 'articlePost-input-images'
+        %div.articlePost_submit
+          = f.submit 'Submit', id: 'articlePost-submit-btn'
+
+= javascript_pack_tag 'article'
