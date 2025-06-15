@@ -1,13 +1,10 @@
 @import "variables";
 
 .profilePage_header {
-  width: 100%;
-  display: flex;
-  padding: 46px 0 16px;
-  align-items: center;
+
 }
 
-.profilePage_header_back-icon {
+.profilePage_header_back-icon.header_left {
   width: 17px;
   height: 12px;
 
