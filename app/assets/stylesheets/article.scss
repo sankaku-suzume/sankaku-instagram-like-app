@@ -10,6 +10,29 @@
   }
 }
 
+.article_headerRight {
+}
+
+.article_userAvatar.dropdown {
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  z-index: 20;
+
+  img {
+    width: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.article_userDropdown {
+  top: 30px;
+  right: 0;
+  padding: 10px;
+}
+
 .article_main {
   margin-top: 22px;
 }
@@ -55,13 +78,6 @@
   width: 30px;
   height: 30px;
   padding: 10px 0;
-  cursor: pointer;
-  z-index: 10;
-  position: relative;
-
-  &:hover .article_articleDropdown {
-    display: block;
-  }
 
   img {
     width: 100%;
@@ -70,14 +86,10 @@
 }
 
 .article_articleDropdown {
-  display: none;
-  content: "";
-  position: absolute;
   top: 30px;
   right: 0;
   width: 70px;
   padding: 10px;
-  background: $text-inactive-color;
   text-align: right;
 }
 

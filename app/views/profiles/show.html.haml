@@ -1,7 +1,8 @@
 .container
-  .profilePage_header
-    .profilePage_header_back-icon
-      = image_tag 'back.png'
+  .profilePage_header.header
+    .profilePage_header_back-icon.header_left
+      = link_to root_path do
+        = image_tag 'back.png'
     %h2.profilePage_header_account= current_user.account
   .profilePage_user
     .profilePage_user_image

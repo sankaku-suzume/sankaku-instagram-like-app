@@ -49,3 +49,21 @@ body {
 .hidden {
   display: none;
 }
+
+.dropdown {
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+
+  &:hover .dropdown-content {
+    display: block;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  content: "";
+  position: absolute;
+  background: $base-bg-color;
+  color: $text-inactive-color;
+}
