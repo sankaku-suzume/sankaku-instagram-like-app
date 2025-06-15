@@ -15,8 +15,13 @@ axios.defaults.headers.common['X-CSRF-Token'] = Rails.csrfToken()
 
 $('.profilePage_user_image').on('click', () => {
   $('#profile_avatar').trigger('click')
+  $('#avatar').trigger('click')
 })
 
 $('#profile_avatar').on('change', () => {
+  $('#submit-avatar-btn').trigger('click')
+})
+
+$('#avatar').on('change', () => {
   $('#submit-avatar-btn').trigger('click')
 })

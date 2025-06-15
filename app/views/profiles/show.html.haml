@@ -8,9 +8,9 @@
     .profilePage_user_image
       = image_tag current_user.avatar_image
     .container.profile-form-container.hidden
-      %ul
-        - @profile.errors.full_messages.each do |message|
-          %li= message
+      -# %ul
+        -# - @profile.errors.full_messages.each do |message|
+        -#   %li= message
       
       = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
         %div

@@ -28,6 +28,10 @@ class User < ApplicationRecord
 
   validates :account, uniqueness: true
 
+  def has_written?(article)
+    articles.exists?(id: article.id)
+  end
+
    def avatar_image
     if profile&.avatar&.attached?
       profile.avatar
