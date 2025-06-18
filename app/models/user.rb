@@ -33,7 +33,11 @@ class User < ApplicationRecord
     articles.exists?(id: article.id)
   end
 
-   def avatar_image
+  def has_liked?(article)
+    likes.exists?(article_id: article.id)
+  end
+
+  def avatar_image
     if profile&.avatar&.attached?
       profile.avatar
     else

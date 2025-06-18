@@ -18,3 +18,26 @@ $('#articlePost-input-images').on('change', () => {
     $('#articlePost-post-btn').removeClass('active')
   }
 })
+
+document.addEventListener( 'turbo:load', () => {
+  const dataset = $('#article-index').data()
+  const articleIds = dataset.articleIds
+  articleIds.forEach((articleId) => {
+    axios.get(`/articles/${articleId}/like`)
+      .then((response) => {
+        const hasLiked = response.data.hasLiked
+        handleHeartDisplay(hasLiked, articleId)
+      })
+  })
+
+  listenInactiveHeartEvent(articleId)
+})
+
+const handleHeartDisplay = (hasLiked, articleID) => {
+  if (hasLiked) {
+    $('#heart-active_' + articleID).removeClass('hidden')
+  } else {
+    $('#heart-inactive_' + articleID).removeClass('hidden')
+  }
+}
+
