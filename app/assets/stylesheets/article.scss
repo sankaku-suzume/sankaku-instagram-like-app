@@ -144,6 +144,12 @@
   }
 }
 
+.article_articleLikeIcon {
+  img.hidden {
+    display: none;
+  }
+}
+
 .article_articleLikesCount {
   margin-top: 8px;
   font-size: 12px;

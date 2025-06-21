@@ -11,6 +11,7 @@
             = link_to 'LOGOUT', destroy_user_session_path, data: { turbo_method: 'delete' }
       - else
         = link_to 'LOGIN', new_user_session_path, class: 'header_loginBtn'
-  .article_main.main
+  .article_main.main#article-index{ data: { article_ids: @articles.pluck(:id) }}
     - @articles.each do |article|
       = render 'article', article: article
+= javascript_pack_tag 'article'

@@ -24,6 +24,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :articles, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_one :profile, dependent: :destroy
 
   validates :account, uniqueness: true
@@ -32,7 +33,11 @@ class User < ApplicationRecord
     articles.exists?(id: article.id)
   end
 
-   def avatar_image
+  def has_liked?(article)
+    likes.exists?(article_id: article.id)
+  end
+
+  def avatar_image
     if profile&.avatar&.attached?
       profile.avatar
     else

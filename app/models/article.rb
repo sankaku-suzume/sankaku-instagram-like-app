@@ -17,6 +17,7 @@ class Article < ApplicationRecord
 
   validates :images, presence: true
 
+  has_many :likes, dependent: :destroy
   belongs_to :user
 
   def elapsed_time(article)

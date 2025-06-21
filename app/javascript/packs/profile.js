@@ -25,3 +25,4 @@ $('#profile_avatar').on('change', () => {
 $('#avatar').on('change', () => {
   $('#submit-avatar-btn').trigger('click')
 })
+
