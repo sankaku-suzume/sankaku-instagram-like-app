@@ -28,9 +28,9 @@ document.addEventListener( 'turbo:load', () => {
         const hasLiked = response.data.hasLiked
         handleHeartDisplay(hasLiked, articleId)
       })
+      listenInactiveHeartEvent(articleId)
+      listenActiveHeartEvent(articleId)
   })
-
-  listenInactiveHeartEvent(articleId)
 })
 
 const handleHeartDisplay = (hasLiked, articleID) => {
@@ -41,3 +41,34 @@ const handleHeartDisplay = (hasLiked, articleID) => {
   }
 }
 
+const listenInactiveHeartEvent = (articleID) => {
+  $('#heart-inactive_' + articleID).on('click', () => {
+    axios.post(`/articles/${articleID}/like`)
+      .then((response) => {
+        if (response.data.status === 'ok') {
+          $('#heart-active_' + articleID).removeClass('hidden')
+          $('#heart-inactive_' + articleID).addClass('hidden')
+        }
+      })
+      .catch((e) => {
+        window.alert('Error')
+        console.log(e)
+      })
+  })
+}
+
+const listenActiveHeartEvent = (articleID) => {
+  $('#heart-active_' + articleID).on('click', () => {
+    axios.delete(`/articles/${articleID}/like`)
+      .then((response) => {
+        if (response.data.status === 'ok') {
+          $('#heart-active_' + articleID).addClass('hidden')
+          $('#heart-inactive_' + articleID).removeClass('hidden')
+        }
+      })
+      .catch((e) => {
+        window.alert('Error')
+        console.log(e)
+      })
+  })
+}
