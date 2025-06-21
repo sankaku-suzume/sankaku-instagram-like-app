@@ -1,9 +1,10 @@
 import $ from 'jquery'
-import axios from "axios"
-window.axios = axios
+import axios from 'modules/axios'
+import {
+  listenInactiveHeartEvent,
+  listenActiveHeartEvent
+} from 'modules/handle_heart'
 
-import Rails from "@rails/ujs"
-axios.defaults.headers.common['X-CSRF-Token'] = Rails.csrfToken()
 
 $('#articlePost-post-btn').on('click', () => {
   if ($('#articlePost-post-btn').hasClass('active')) {
@@ -39,36 +40,4 @@ const handleHeartDisplay = (hasLiked, articleID) => {
   } else {
     $('#heart-inactive_' + articleID).removeClass('hidden')
   }
-}
-
-const listenInactiveHeartEvent = (articleID) => {
-  $('#heart-inactive_' + articleID).on('click', () => {
-    axios.post(`/articles/${articleID}/like`)
-      .then((response) => {
-        if (response.data.status === 'ok') {
-          $('#heart-active_' + articleID).removeClass('hidden')
-          $('#heart-inactive_' + articleID).addClass('hidden')
-        }
-      })
-      .catch((e) => {
-        window.alert('Error')
-        console.log(e)
-      })
-  })
-}
-
-const listenActiveHeartEvent = (articleID) => {
-  $('#heart-active_' + articleID).on('click', () => {
-    axios.delete(`/articles/${articleID}/like`)
-      .then((response) => {
-        if (response.data.status === 'ok') {
-          $('#heart-active_' + articleID).addClass('hidden')
-          $('#heart-inactive_' + articleID).removeClass('hidden')
-        }
-      })
-      .catch((e) => {
-        window.alert('Error')
-        console.log(e)
-      })
-  })
 }
