@@ -1,0 +1,58 @@
+@import 'variables';
+
+.comment_header.header {
+  
+}
+
+.comment_headerLeft {
+  width: 20px;
+  height: 20px;
+
+  img {
+    width: 100%;
+    display: block;
+    margin-top: 4px;
+  }
+}
+
+.comment_headerCenter {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-right: 50%;
+  margin-left: auto;
+  transform: translateX(50%);
+}
+
+.comment_main {
+  margin-top: 52px;
+}
+
+.comment_comment {
+  display: flex;
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.comment_commentUserImage {
+  width: 32px;
+  height: 32px;
+  margin-top: 7px;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+  }
+}
+
+.comment_commentUserAccount {
+  font-size: 16px;
+}
+
+.comment_commentContent {
+  font-size: 14px;
+  color: $text-gray-color;
+  line-height: 20px;
+}
