@@ -20,7 +20,7 @@ $('#articlePost-input-images').on('change', () => {
 })
 
 document.addEventListener( 'turbo:load', () => {
-  const dataset = $('#article-index').data()
+  const dataset = $('#article-index, #article-show').data()
   const articleIds = dataset.articleIds
   articleIds.forEach((articleId) => {
     axios.get(`/articles/${articleId}/like`)
