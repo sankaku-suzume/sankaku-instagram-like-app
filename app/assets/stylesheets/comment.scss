@@ -55,4 +55,56 @@
   font-size: 14px;
   color: $text-gray-color;
   line-height: 20px;
+  max-width: 297px;
+  overflow-wrap: anywhere;
+}
+
+.comment_form {
+  width: 100%;
+  max-width: 343px;
+  margin-inline: auto;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  height: 42px;
+  display: flex;
+  padding: 6px 21px;
+  gap: 8px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $base-bg-color;
+}
+
+.comment_formIcon {
+  width: 20px;
+  height: 20px;
+  margin: 6px 0;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.comment_formContent {
+  width: calc(100% - 28px * 2);
+}
+
+.comment_textArea {
+  margin: 0;
+  padding: 0;
+  min-height: 16px;
+  border: none;
+  font-size: 16px;
+}
+
+.comment_formSubmit {
+  width: 20px;
+  height: 20px;
+  margin: 6px 0;
+
+  img {
+    width: 100%;
+    display: block;
+  }
 }

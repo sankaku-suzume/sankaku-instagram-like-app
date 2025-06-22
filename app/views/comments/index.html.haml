@@ -1,6 +1,6 @@
-.container
+.container#comment-index{ data: { article_id: @article.id }}
   .comment_header.header
-    = link_to :back do
+    = link_to :back, data: { turbo: false }  do
       .comment_headerLeft.header_left
         = image_tag 'back.png'
     %h2.comment_headerCenter.header_center Comment
@@ -12,3 +12,12 @@
         .comment_commentContentWrapper
           .comment_commentUserAccount= comment.user.account
           .comment_commentContent= comment.content
+  .comment_form
+    .comment_formIcon
+      = image_tag 'Comment.png'
+    .comment_formContent
+      = text_area_tag :comment_content, '', class: 'comment_textArea'
+    .comment_formSubmit#comment_submit.hidden
+      = image_tag 'up.png'
+
+= javascript_pack_tag 'comment'
