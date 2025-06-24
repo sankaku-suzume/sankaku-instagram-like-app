@@ -32,6 +32,7 @@ gem 'importmap-rails'
 gem 'psych', '~> 3.1'
 gem 'sassc-rails'
 gem 'webpacker', '~> 4.0', '>= 4.0.7'
+gem 'sidekiq'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[ windows jruby ]

@@ -27,7 +27,7 @@ class Comment < ApplicationRecord
     users.each do |user|
       mention = '@' + user.account
       if self.content.include?(mention)
-        CommentMailer.mention_comment(user, self).deliver_now
+        CommentMailer.mention_comment(user, self).deliver_later
       end
     end
   end
