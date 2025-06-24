@@ -61,6 +61,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'erb2haml'
   gem 'web-console'
+  gem 'letter_opener'
+  gem 'letter_opener_web', '~> 3.0'
 end
 
 group :test do
