@@ -18,4 +18,17 @@ class Comment < ApplicationRecord
   belongs_to :article
   belongs_to :user
   validates :content, presence: true
+
+  after_create :send_email
+
+  private
+  def send_email
+    users = User.all
+    users.each do |user|
+      mention = '@' + user.account
+      if self.content.include?(mention)
+        CommentMailer.mention_comment(user, self).deliver_later
+      end
+    end
+  end
 end
