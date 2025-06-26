@@ -13,7 +13,7 @@ import Rails from "@rails/ujs"
 axios.defaults.headers.common['X-CSRF-Token'] = Rails.csrfToken()
 
 
-$('.profilePage_user_image').on('click', () => {
+$('.profilePage_user_image.btn').on('click', () => {
   $('#profile_avatar').trigger('click')
   $('#avatar').trigger('click')
 })

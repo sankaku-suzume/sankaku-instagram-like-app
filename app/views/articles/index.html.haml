@@ -7,8 +7,8 @@
         .article_userAvatar.dropdown
           = image_tag current_user.avatar_image
           .article_userDropdown.dropdown-content
-            = link_to 'Profile', profile_path
-            = link_to 'LOGOUT', destroy_user_session_path, data: { turbo_method: 'delete' }
+            = link_to 'Profile', profile_path, data: { turbo: false }
+            = link_to 'LOGOUT', destroy_user_session_path, data: { turbo: false, turbo_method: 'delete' }
       - else
         = link_to 'LOGIN', new_user_session_path, class: 'header_loginBtn'
   .article_main.main#article-index{ data: { article_ids: @articles.pluck(:id) }}

@@ -39,6 +39,10 @@
   border: 1px solid #e91e63;
   position: relative;
 
+  &.btn {
+    cursor: pointer;
+  }
+
   img {
     content: "";
     position: absolute;
