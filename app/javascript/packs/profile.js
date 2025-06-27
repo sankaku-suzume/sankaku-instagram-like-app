@@ -26,3 +26,26 @@ $('#avatar').on('change', () => {
   $('#submit-avatar-btn').trigger('click')
 })
 
+document.addEventListener( 'turbo:load', () => {
+  const dataset = $('#profile-show').data()
+  const accountId = dataset.userId
+  const followerId = dataset.followerID
+
+  axios.get(`/accounts/${accountId}/follows/${followerId}`)
+    .then((response) => {
+      const hasFollowed = response.data.hasFollowed
+      handleFollowDisplay(hasFollowed)
+    })
+    // listenInactiveHeartEvent(articleId)
+    // listenActiveHeartEvent(articleId)
+
+})
+
+const handleFollowDisplay = (hasFollowed) => {
+  if (hasFollowed) {
+    $('#profilePage-follow-btn').removeClass('active')
+  } else {
+    $('#profilePage-follow-btn').addClass('active')
+  }
+}
+

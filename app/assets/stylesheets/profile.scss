@@ -23,6 +23,12 @@
   // transform: translateX(50%);
 }
 
+.profilePage-follow-btn.active {
+  color: $text-link-color;
+  cursor: pointer;
+  font-weight: 500;
+}
+
 .profilePage_user {
   width: 100%;
   max-width: 343px;
