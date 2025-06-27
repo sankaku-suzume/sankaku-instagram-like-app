@@ -1,9 +1,13 @@
-.container
+.container#profile-show{ data: { user_id: user.id }}
   .profilePage_header.header
-    .profilePage_header_back-icon.header_left
-      = link_to root_path do
-        = image_tag 'back.png'
+    .profilePage_header_left.header_left
+      .profilePage_header_back-icon
+        = link_to root_path do
+          = image_tag 'back.png'
     %h2.profilePage_header_account= user.account
+    .profilePage_headerRight.header_right
+      - if user != current_user
+        .profilePage-follow-btn#profilePage-follow-btn Follow
   .profilePage_user
     %div{class: ["profilePage_user_image", (if user == current_user; then "btn"; else ""; end)]}
       = image_tag user.avatar_image
