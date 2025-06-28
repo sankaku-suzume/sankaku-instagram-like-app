@@ -12,6 +12,10 @@ window.axios = axios
 import Rails from "@rails/ujs"
 axios.defaults.headers.common['X-CSRF-Token'] = Rails.csrfToken()
 
+import {
+  listenFollowEvent
+} from 'modules/follow'
+
 
 $('.profilePage_user_image.btn').on('click', () => {
   $('#profile_avatar').trigger('click')
@@ -35,8 +39,8 @@ document.addEventListener( 'turbo:load', () => {
     .then((response) => {
       const hasFollowed = response.data.hasFollowed
       handleFollowDisplay(hasFollowed)
+      listenFollowEvent(accountId)
     })
-    // listenInactiveHeartEvent(articleId)
     // listenActiveHeartEvent(articleId)
 
 })

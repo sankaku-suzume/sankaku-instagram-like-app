@@ -46,7 +46,13 @@ class User < ApplicationRecord
   end
 
   def follow!(user)
-    following_relationships.create!(following_id: user.id)
+    if user.is_a?(User)
+      user_id = user.id
+    else
+      user_id = user
+    end
+
+    following_relationships.create!(following_id: user_id)
   end
 
   def unfollow!(user)
