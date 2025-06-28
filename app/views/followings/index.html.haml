@@ -1,16 +1,1 @@
-.container
-  .header
-    .header_left
-      .header_back-icon
-        = link_to :back, data: { turbo: false } do
-          = image_tag 'back.png'
-    %h2.header_center Followings
-    .header_left
-  .main.follow_main
-    - @followings.each do |following|
-      .follow_user
-        .follow_userAvatar
-          = link_to account_path(following), data: { turbo: false } do
-            = image_tag following.avatar_image
-        .follow_userInfo
-          .follow_userAccount= following.account
+= render 'commons/follow', users: @followings

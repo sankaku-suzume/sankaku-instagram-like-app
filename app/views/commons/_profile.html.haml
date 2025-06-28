@@ -28,9 +28,10 @@
         %br/
         %span.profilePage_user_unit Posts
       .profilePage_user_Count
-        %span#profilePage_followersCount= user.followers.count
-        %br/
-        %span.profilePage_user_unit Followers
+        = link_to account_followers_path(user), data: { turbo: false } do
+          %span#profilePage_followersCount= user.followers.count
+          %br/
+          %span.profilePage_user_unit Followers
       .profilePage_user_Count
         = link_to account_followings_path(user), data: { turbo: false } do
           %span#profilePage_followingsCount= user.followings.count
