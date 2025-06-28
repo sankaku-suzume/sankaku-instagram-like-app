@@ -24,15 +24,15 @@
           = f.submit 'submit', class: 'btn-primary', id: 'submit-avatar-btn'
     .profilePage_user_info
       .profilePage_user_Count
-        44
+        %span#profilePage_articlesCount= user.articles.count
         %br/
         %span.profilePage_user_unit Posts
       .profilePage_user_Count
-        %span#profilePage_followersCount 110
+        %span#profilePage_followersCount= user.followers.count
         %br/
         %span.profilePage_user_unit Followers
       .profilePage_user_Count
-        44
+        %span#profilePage_followingsCount= user.followings.count
         %br/
         %span.profilePage_user_unit Following
 
