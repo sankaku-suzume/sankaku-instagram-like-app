@@ -2,7 +2,7 @@
   .profilePage_header.header
     .profilePage_header_left.header_left
       .profilePage_header_back-icon
-        = link_to root_path do
+        = link_to :back, data: { turbo: false } do
           = image_tag 'back.png'
     %h2.profilePage_header_account= user.account
     .profilePage_headerRight.header_right
