@@ -11,23 +11,34 @@
 
 .header_left {
   color: $text-inactive-color;
-  width: 50px;
+  width: 60px;
 
   &.active {
     color: $text-link-color;
   }
 }
 
+.header_back-icon {
+  width: 17px;
+  height: 12px;
+
+  img {
+    width: 100%;
+    display: block;
+    margin-top: 5px;
+  }
+}
+
 .header_center {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   width: 100px;
   text-align: center;
 }
 
 .header_right {
   color: $text-inactive-color;
-  width: 50px;
+  width: 60px;
   text-align: right;
 
   &.active {

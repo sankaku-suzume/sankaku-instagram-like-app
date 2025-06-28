@@ -2,7 +2,8 @@
   .article_articleHeader
     .article_articleUser
       .article_articleUserAvatar
-        = image_tag article.user.avatar_image
+        = link_to account_path(article.user), data: { turbo: false } do
+          = image_tag article.user.avatar_image
       .article_articleUserInfo 
         .article_articleUserAccount= article.user.account
         .article_articlePostTime= article.elapsed_time(article)

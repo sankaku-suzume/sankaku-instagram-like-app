@@ -21,8 +21,15 @@ Rails.application.routes.draw do
   root 'articles#index'
 
   resources :articles do
-    resources :comments, only: [:index, :create]
+    resources :comments, only: [ :index, :create ]
     resource :like, only: [ :show, :create, :destroy ]
+  end
+
+  resources :accounts, only: [ :show ] do
+    resources :follows, only: [ :show, :create ]
+    resources :unfollows, only: [ :create ]
+    resources :followings, only: [ :index ]
+    resources :followers, only: [ :index ]
   end
 
   resource :profile, only: [ :show, :edit, :update ]

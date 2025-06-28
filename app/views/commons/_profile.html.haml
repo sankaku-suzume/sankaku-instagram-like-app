@@ -1,0 +1,42 @@
+.container#profile-show{ data: { user_id: user.id }}
+  .profilePage_header.header
+    .profilePage_header_left.header_left
+      .profilePage_header_back-icon
+        = link_to :back, data: { turbo: false } do
+          = image_tag 'back.png'
+    %h2.profilePage_header_account= user.account
+    .profilePage_headerRight.header_right
+      - if user != current_user
+        .profilePage-follow-btn#profilePage-follow-btn.hidden Follow
+        .profilePage-follow-btn#profilePage-unfollow-btn.hidden Unfollow
+  .profilePage_user
+    %div{class: ["profilePage_user_image", (if user == current_user; then "btn"; else ""; end)]}
+      = image_tag user.avatar_image
+    - if user == current_user
+      .container.profile-form-container.hidden
+        -# %ul
+          -# - @profile.errors.full_messages.each do |message|
+          -#   %li= message
+        
+        = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+          %div
+            = f.file_field :avatar
+          = f.submit 'submit', class: 'btn-primary', id: 'submit-avatar-btn'
+    .profilePage_user_info
+      .profilePage_user_Count
+        %span#profilePage_articlesCount= user.articles.count
+        %br/
+        %span.profilePage_user_unit Posts
+      .profilePage_user_Count
+        = link_to account_followers_path(user), data: { turbo: false } do
+          %span#profilePage_followersCount= user.followers.count
+          %br/
+          %span.profilePage_user_unit Followers
+      .profilePage_user_Count
+        = link_to account_followings_path(user), data: { turbo: false } do
+          %span#profilePage_followingsCount= user.followings.count
+          %br/
+          %span.profilePage_user_unit Following
+
+
+= javascript_pack_tag 'profile'

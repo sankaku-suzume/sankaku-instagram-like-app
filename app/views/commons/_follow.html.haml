@@ -1,0 +1,16 @@
+.container
+  .header
+    .header_left
+      .header_back-icon
+        = link_to :back, data: { turbo: false } do
+          = image_tag 'back.png'
+    %h2.header_center.follow_header_center= controller_name
+    .header_left
+  .main.follow_main
+    - users.each do |user|
+      .follow_user
+        .follow_userAvatar
+          = link_to account_path(user), data: { turbo: false } do
+            = image_tag user.avatar_image
+        .follow_userInfo
+          .follow_userAccount= user.account
