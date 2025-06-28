@@ -7,7 +7,8 @@
     %h2.profilePage_header_account= user.account
     .profilePage_headerRight.header_right
       - if user != current_user
-        .profilePage-follow-btn#profilePage-follow-btn Follow
+        .profilePage-follow-btn#profilePage-follow-btn.hidden Follow
+        .profilePage-follow-btn#profilePage-unfollow-btn.hidden Unfollow
   .profilePage_user
     %div{class: ["profilePage_user_image", (if user == current_user; then "btn"; else ""; end)]}
       = image_tag user.avatar_image

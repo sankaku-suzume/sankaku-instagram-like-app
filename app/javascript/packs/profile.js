@@ -13,7 +13,8 @@ import Rails from "@rails/ujs"
 axios.defaults.headers.common['X-CSRF-Token'] = Rails.csrfToken()
 
 import {
-  listenFollowEvent
+  listenFollowEvent,
+  listenUnfollowEvent
 } from 'modules/follow'
 
 
@@ -39,17 +40,17 @@ document.addEventListener( 'turbo:load', () => {
     .then((response) => {
       const hasFollowed = response.data.hasFollowed
       handleFollowDisplay(hasFollowed)
-      listenFollowEvent(accountId)
     })
-    // listenActiveHeartEvent(articleId)
 
+  listenFollowEvent(accountId)
+  listenUnfollowEvent(accountId)
 })
 
 const handleFollowDisplay = (hasFollowed) => {
   if (hasFollowed) {
-    $('#profilePage-follow-btn').removeClass('active')
+    $('#profilePage-unfollow-btn').removeClass('hidden')
   } else {
-    $('#profilePage-follow-btn').addClass('active')
+    $('#profilePage-follow-btn').removeClass('hidden')
   }
 }
 
