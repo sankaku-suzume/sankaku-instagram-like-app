@@ -32,9 +32,10 @@
         %br/
         %span.profilePage_user_unit Followers
       .profilePage_user_Count
-        %span#profilePage_followingsCount= user.followings.count
-        %br/
-        %span.profilePage_user_unit Following
+        = link_to account_followings_path(user), data: { turbo: false } do
+          %span#profilePage_followingsCount= user.followings.count
+          %br/
+          %span.profilePage_user_unit Following
 
 
 = javascript_pack_tag 'profile'
