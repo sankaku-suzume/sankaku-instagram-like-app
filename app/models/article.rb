@@ -22,7 +22,7 @@ class Article < ApplicationRecord
   belongs_to :user
 
   def elapsed_time(article)
-    post_sec = article.updated_at.to_i
+    post_sec = article.created_at.to_i
     now_sec = Time.now.to_i
 
     sec_per_min = 60
@@ -55,7 +55,8 @@ class Article < ApplicationRecord
     elsif elapsed_week >= 2 && elapsed_week <= 4
       "#{elapsed_week} weeks ago"
     else
-      article.updated_at.strftime('%y/%m/%d')
+      article.created_at.strftime('%y/%m/%d')
     end
   end
+
 end
