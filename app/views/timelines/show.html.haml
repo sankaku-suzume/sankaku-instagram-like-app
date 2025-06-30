@@ -1,0 +1,17 @@
+.container 
+  .article_header.header
+    .article_headerLeft.header_left
+      = image_tag 'photo-camera.png'
+    .article_headerRight.header_right 
+      - if user_signed_in?
+        .article_userAvatar.dropdown
+          = image_tag current_user.avatar_image
+          .article_userDropdown.dropdown-content
+            = link_to 'Profile', profile_path, data: { turbo: false }
+            = link_to 'LOGOUT', destroy_user_session_path, data: { turbo_method: 'delete' }
+      - else
+        = link_to 'LOGIN', new_user_session_path, data: { turbo: false }, class: 'header_loginBtn'
+  .article_main.main#article-index{ data: { article_ids: @articles.pluck(:id) }}
+    - @articles.each do |article|
+      = render 'articles/article', article: article
+= javascript_pack_tag 'article'
