@@ -14,13 +14,13 @@ const appendNewComment = (comment) => {
   }
   $('.comment_main').append(
     ` <div class="comment_comment">
-      <div class="comment_commentUserImage">
-          <img src="${avatar_image}" alt="User Avatar">
-      </div>
-      <div class="comment_commentContentWrapper">
-          <div class="comment_commentUserAccount">${escapeHtml(comment.user.account)}</div>
-          <div class="comment_commentContent">${escapeHtml(comment.content)}</div>
-      </div>
+        <div class="comment_commentUserImage">
+            <img src="${avatar_image}" alt="User Avatar">
+        </div>
+        <div class="comment_commentContentWrapper">
+            <div class="comment_commentUserAccount">${escapeHtml(comment.user.account)}</div>
+            <div class="comment_commentContent">${escapeHtml(comment.content)}</div>
+        </div>
       </div>`
   )
 }
