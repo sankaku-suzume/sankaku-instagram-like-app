@@ -3,6 +3,8 @@
     .article_headerLeft.header_left
       = link_to new_article_path, data: { turbo: false } do
         = image_tag 'photo-camera.png'
+      = link_to root_path, data: { turbo: false } do
+        = image_tag 'home.svg'
     .article_headerRight.header_right 
       - if user_signed_in?
         .article_userAvatar.dropdown

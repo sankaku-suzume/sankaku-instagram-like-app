@@ -1,11 +1,13 @@
 @import 'variables';
 // index
 .article_headerLeft {
-  width: 20px;
+  width: 56px;
   height: 20px;
+  display: flex;
+  gap: 24px;
 
   img {
-    width: 100%;
+    width: 20px;
     display: block;
   }
 }
