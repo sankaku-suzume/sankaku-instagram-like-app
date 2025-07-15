@@ -5,21 +5,6 @@ import {
   listenActiveHeartEvent
 } from 'modules/handle_heart'
 
-
-$('#articlePost-post-btn').on('click', () => {
-  if ($('#articlePost-post-btn').hasClass('active')) {
-    $('#articlePost-submit-btn').trigger('click')
-  }
-})
-
-$('#articlePost-input-images').on('change', () => {
-  if ($('#articlePost-input-images').val() !== ""){
-    $('#articlePost-post-btn').addClass('active')
-  }else{
-    $('#articlePost-post-btn').removeClass('active')
-  }
-})
-
 document.addEventListener( 'turbo:load', () => {
   const dataset = $('#article-index, #article-show').data()
   const articleIds = dataset.articleIds

@@ -1,7 +1,7 @@
 .container
   .articlePost_header.header
     .articlePost_headerLeft.header_left.active
-      = link_to 'Cancel', articles_path
+      = link_to 'Cancel', :back
     %h2.articlePost_headerCenter.header_center Status
     .articlePost_headerRight.header_right#articlePost-post-btn Post
   .articlePost_main.main
@@ -21,4 +21,4 @@
         %div.articlePost_submit
           = f.submit 'Submit', id: 'articlePost-submit-btn'
 
-= javascript_pack_tag 'article'
+= javascript_pack_tag 'article_edit'

@@ -11,7 +11,7 @@
 .follow_user {
   display: flex;
   gap: 20px;
-  width: 100vw;
+  width: calc(100% + 32px);
   height: 73px;
   margin-inline: -16px;
   padding-inline: 16px;

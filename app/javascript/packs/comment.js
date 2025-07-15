@@ -8,15 +8,19 @@ const escapeHtml = (text) => {
 }
 
 const appendNewComment = (comment) => {
+  let avatar_image = '/assets/default-avatar.png'
+  if (comment.user.avatar_image !== 'default-avatar.png') {
+    avatar_image = comment.user.avatar_image
+  }
   $('.comment_main').append(
     ` <div class="comment_comment">
-      <div class="comment_commentUserImage">
-          <img src="${comment.user.avatar_image}" alt="User Avatar">
-      </div>
-      <div class="comment_commentContentWrapper">
-          <div class="comment_commentUserAccount">${escapeHtml(comment.user.account)}</div>
-          <div class="comment_commentContent">${escapeHtml(comment.content)}</div>
-      </div>
+        <div class="comment_commentUserImage">
+            <img src="${avatar_image}" alt="User Avatar">
+        </div>
+        <div class="comment_commentContentWrapper">
+            <div class="comment_commentUserAccount">${escapeHtml(comment.user.account)}</div>
+            <div class="comment_commentContent">${escapeHtml(comment.content)}</div>
+        </div>
       </div>`
   )
 }
