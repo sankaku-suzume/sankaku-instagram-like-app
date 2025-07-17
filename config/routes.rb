@@ -23,7 +23,6 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments, only: [ :index, :create ]
-    resource :like, only: [ :show, :create, :destroy ]
   end
 
   resources :accounts, only: [ :show ] do
@@ -34,4 +33,10 @@ Rails.application.routes.draw do
   end
 
   resource :profile, only: [ :show, :edit, :update ]
+
+  namespace :api, defaults: { format: :json } do
+    scope '/articles/:article_id' do
+      resource :like, only: [ :show, :create, :destroy ]
+    end
+  end
 end

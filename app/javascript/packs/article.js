@@ -9,7 +9,7 @@ document.addEventListener( 'turbo:load', () => {
   const dataset = $('#article-index, #article-show').data()
   const articleIds = dataset.articleIds
   articleIds.forEach((articleId) => {
-    axios.get(`/articles/${articleId}/like`)
+    axios.get(`/api/articles/${articleId}/like`)
       .then((response) => {
         const hasLiked = response.data.hasLiked
         handleHeartDisplay(hasLiked, articleId)
