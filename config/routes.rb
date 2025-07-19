@@ -17,13 +17,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
- 
-  root 'timelines#show'
-  resource :timeline, only: [ :show ]
+
+  root 'apps/timelines#show'
 
   resources :articles do
     resources :comments, only: [ :index, :create ]
-    resource :like, only: [ :show, :create, :destroy ]
   end
 
   resources :accounts, only: [ :show ] do
@@ -33,5 +31,14 @@ Rails.application.routes.draw do
     resources :followers, only: [ :index ]
   end
 
-  resource :profile, only: [ :show, :edit, :update ]
+  scope module: :apps do
+    resource :timeline, only: [ :show ]
+    resource :profile, only: [ :show, :edit, :update ]
+  end
+
+  namespace :api, defaults: { format: :json } do
+    scope '/articles/:article_id' do
+      resource :like, only: [ :show, :create, :destroy ]
+    end
+  end
 end
