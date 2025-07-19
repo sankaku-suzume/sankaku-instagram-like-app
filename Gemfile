@@ -32,8 +32,8 @@ gem 'haml-rails', '~> 2.0'
 gem 'importmap-rails'
 gem 'psych', '~> 3.1'
 gem 'sassc-rails'
-gem 'webpacker', '~> 4.0', '>= 4.0.7'
 gem 'sidekiq'
+gem 'webpacker', '~> 4.0', '>= 4.0.7'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
@@ -62,9 +62,9 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'erb2haml'
-  gem 'web-console'
   gem 'letter_opener'
   gem 'letter_opener_web', '~> 3.0'
+  gem 'web-console'
 end
 
 group :test do

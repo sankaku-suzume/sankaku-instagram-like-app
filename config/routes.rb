@@ -17,9 +17,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
- 
+
   root 'apps/timelines#show'
-  
 
   resources :articles do
     resources :comments, only: [ :index, :create ]
@@ -32,7 +31,6 @@ Rails.application.routes.draw do
     resources :followers, only: [ :index ]
   end
 
-  
   scope module: :apps do
     resource :timeline, only: [ :show ]
     resource :profile, only: [ :show, :edit, :update ]

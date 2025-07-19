@@ -1,5 +1,4 @@
 class Apps::ProfilesController < Apps::ApplicationController
-
   def show
     @profile = current_user.prepare_profile
   end
@@ -24,6 +23,6 @@ class Apps::ProfilesController < Apps::ApplicationController
      params.require(:profile).permit(
       :avatar
      )
-    # { avatar: params[:avatar] } if params[:avatar].present?
+     # { avatar: params[:avatar] } if params[:avatar].present?
    end
 end
