@@ -18,6 +18,7 @@ class Comment < ApplicationRecord
   belongs_to :article
   belongs_to :user
   validates :content, presence: true
+  validates :content, format: { with: /\S/ }
 
   after_create :send_email
 
