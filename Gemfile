@@ -27,6 +27,7 @@ gem 'jbuilder'
 gem 'active_decorator'
 gem 'active_model_serializers'
 gem 'devise', '~> 4.9'
+gem 'faker'
 gem 'hamlit'
 gem 'haml-rails', '~> 2.0'
 gem 'importmap-rails'
@@ -34,7 +35,6 @@ gem 'psych', '~> 3.1'
 gem 'sassc-rails'
 gem 'sidekiq'
 gem 'webpacker', '~> 4.0', '>= 4.0.7'
-gem 'faker'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
@@ -48,9 +48,9 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[ mri windows ], require: 'debug/prelude'
+  gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'brakeman', require: false

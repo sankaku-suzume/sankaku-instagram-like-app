@@ -26,7 +26,7 @@ RSpec.describe Article, type: :model do
 
   context '画像が1つ以上選択されているが、contentがスペースのみだった場合' do
     let!(:article) { build(:article, content: ' ', user: user) }
-    
+
     before do
       article.save
     end
