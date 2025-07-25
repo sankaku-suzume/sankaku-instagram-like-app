@@ -2,14 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   let!(:user) { create(:user) }
-  let!(:article) do
-    article = user.articles.build({
-      content: Faker::Lorem.characters(number: 10)
-    })
-    article.images.attach(io: File.open('spec/fixtures/files/default-avatar.png'), filename: 'default-avatar.png', content_type: 'image/png')
-    article.save
-    article
-  end
+  let!(:article) { create(:article, user: user) }
 
   context 'contentに値が入っている場合' do
     let!(:comment) { build(:comment, user: user, article: article) }
