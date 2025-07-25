@@ -36,6 +36,9 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
 
   validates :account, uniqueness: true
+  validates :account, presence: true
+  validates :account, format: { with: /\S/ }
+
 
   def has_written?(article)
     articles.exists?(id: article.id)
