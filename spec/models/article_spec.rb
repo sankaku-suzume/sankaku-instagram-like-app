@@ -17,8 +17,6 @@ RSpec.describe Article, type: :model do
         images: nil,
         content: Faker::Lorem.characters(number: 10)
       })
-      article.images.attach(io: File.open('spec/fixtures/files/default-avatar.png'), filename: 'default-avatar.png', content_type: 'image/png')
-      article
     end
 
     it '記事を保存できない' do
