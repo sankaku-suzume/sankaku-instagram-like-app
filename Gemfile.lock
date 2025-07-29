@@ -47,6 +47,11 @@ GEM
       rails-html-sanitizer (~> 1.6)
     active_decorator (1.4.1)
       activesupport
+    active_decorator-rspec (0.0.9)
+      actionpack
+      active_decorator
+      activesupport
+      rspec (>= 3.0)
     active_model_serializers (0.10.15)
       actionpack (>= 4.1)
       activemodel (>= 4.1)
@@ -316,6 +321,10 @@ GEM
       railties (>= 5.2)
     rexml (3.4.1)
     rouge (4.5.2)
+    rspec (3.13.1)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
     rspec-core (3.13.5)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.5)
@@ -445,6 +454,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_decorator
+  active_decorator-rspec
   active_model_serializers
   annotate
   better_errors

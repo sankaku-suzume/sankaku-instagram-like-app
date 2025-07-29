@@ -51,6 +51,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'rspec-rails'
+  gem 'active_decorator-rspec'
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'brakeman', require: false
