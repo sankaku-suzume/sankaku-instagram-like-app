@@ -19,7 +19,7 @@ RSpec.describe "Comments", type: :request do
       before do
         sign_in user
       end
-      
+
       it 'コメントが保存される' do
         comment_params = attributes_for(:comment, user: user)
         post article_comments_path(article), params: { comment: comment_params }
