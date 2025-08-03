@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :profile do
-
     after(:build) do |profile|
       profile.avatar.attach(
         io: File.open(Rails.root.join('spec/fixtures/files/default-avatar.png')),

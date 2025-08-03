@@ -32,5 +32,4 @@ RSpec.describe "Apps::Profiles", type: :request do
       end
     end
   end
-  
 end
