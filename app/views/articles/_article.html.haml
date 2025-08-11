@@ -27,7 +27,7 @@
     .article_articleLikeIcon.article_articleIcon
       = image_tag 'heart-inactive.png', class: 'heart-inactive hidden', id: "heart-inactive_#{article.id}"
       = image_tag 'heart-active.png', class: 'heart-active hidden', id: "heart-active_#{article.id}"
-    = link_to article_comments_path(article.id), data: { turbo: false } do
+    = link_to article_comments_path(article.id), data: { turbo: false }, id: "comment-icon_#{article.id}" do
       .article_articleCommentIcon.article_articleIcon
         = image_tag 'Comment.png'
     = link_to "https://twitter.com/share?url=https://hogehoge.com#{ article_path(article) }", target: '_blank', class: 'article_articleShareIcon article_articleIcon' do
