@@ -136,6 +136,10 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.6.2)
+    dotenv (3.1.8)
+    dotenv-rails (3.1.8)
+      dotenv (= 3.1.8)
+      railties (>= 6.1)
     drb (2.2.1)
     erb2haml (0.1.5)
       html2haml
@@ -464,6 +468,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
+  dotenv-rails
   erb2haml
   factory_bot_rails
   faker
