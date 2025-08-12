@@ -5,7 +5,7 @@ import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
 import $ from 'jquery'
-import axios from 'modules/axios'
+import axios from '../modules/axios'
 
 // document.addEventListener('turbo:load', () => {
 //   $('.profilePage_header_account').on('click', () => {
