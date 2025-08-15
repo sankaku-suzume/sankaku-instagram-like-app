@@ -38,6 +38,7 @@ gem 'sassc-rails'
 gem 'sidekiq'
 gem 'webpacker', '~> 4.0', '>= 4.0.7'
 gem 'aws-sdk-s3', require: false
+gem 'redis'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
