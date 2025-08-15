@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '3.3.2'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.2.2', '>= 7.2.2.1'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -35,6 +37,8 @@ gem 'psych', '~> 3.1'
 gem 'sassc-rails'
 gem 'sidekiq'
 gem 'webpacker', '~> 4.0', '>= 4.0.7'
+gem 'aws-sdk-s3', require: false
+gem 'redis'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
@@ -52,6 +56,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'brakeman', require: false

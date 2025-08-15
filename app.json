@@ -1,0 +1,16 @@
+{
+  "name": "sankaku-instagram-like-app",
+  "description": "This is instagram like app",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/sankaku-suzume/sankaku-instagram-like-app",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:essential-0"
+  ],
+  "buildpacks": [{
+    "url": "heroku/nodejs"
+  }, {
+    "url": "heroku/ruby"
+  }]
+}

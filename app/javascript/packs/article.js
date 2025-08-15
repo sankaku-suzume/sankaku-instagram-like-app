@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import axios from 'modules/axios'
+import axios from '../modules/axios'
 import {
   listenInactiveHeartEvent,
   listenActiveHeartEvent

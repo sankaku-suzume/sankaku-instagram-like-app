@@ -1,5 +1,5 @@
 import $, { data, error } from 'jquery'
-import axios from 'modules/axios'
+import axios from '../modules/axios'
 
 const escapeHtml = (text) => {
   const div = document.createElement('div');
