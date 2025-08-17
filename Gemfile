@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '3.3.2'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.2.2', '>= 7.2.2.1'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -26,12 +28,14 @@ gem 'jbuilder'
 # gem "bcrypt", "~> 3.1.7"
 gem 'active_decorator'
 gem 'active_model_serializers'
+gem 'aws-sdk-s3', require: false
 gem 'devise', '~> 4.9'
 gem 'faker'
 gem 'hamlit'
 gem 'haml-rails', '~> 2.0'
 gem 'importmap-rails'
 gem 'psych', '~> 3.1'
+gem 'redis'
 gem 'sassc-rails'
 gem 'sidekiq'
 gem 'webpacker', '~> 4.0', '>= 4.0.7'
@@ -49,6 +53,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'active_decorator-rspec'
   gem 'debug', platforms: %i[ mri windows ], require: 'debug/prelude'
+  gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'rspec-rails'
