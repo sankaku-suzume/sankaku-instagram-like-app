@@ -28,17 +28,17 @@ gem 'jbuilder'
 # gem "bcrypt", "~> 3.1.7"
 gem 'active_decorator'
 gem 'active_model_serializers'
+gem 'aws-sdk-s3', require: false
 gem 'devise', '~> 4.9'
 gem 'faker'
 gem 'hamlit'
 gem 'haml-rails', '~> 2.0'
 gem 'importmap-rails'
 gem 'psych', '~> 3.1'
+gem 'redis'
 gem 'sassc-rails'
 gem 'sidekiq'
 gem 'webpacker', '~> 4.0', '>= 4.0.7'
-gem 'aws-sdk-s3', require: false
-gem 'redis'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
@@ -53,10 +53,10 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'active_decorator-rspec'
   gem 'debug', platforms: %i[ mri windows ], require: 'debug/prelude'
+  gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'rspec-rails'
-  gem 'dotenv-rails'
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'brakeman', require: false
