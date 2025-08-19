@@ -21,6 +21,10 @@
     %link{rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: true}
     %link{href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap", rel: "stylesheet"}
   %body
+    -# %p.notice= notice
+    -# %p.alert= alert
+    - if flash.present?
+      .flash
+        - flash.each do |key, value|
+          %div{:class => key}= value
     = yield
-    %p.notice= notice
-    %p.alert= alert
