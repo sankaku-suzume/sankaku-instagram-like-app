@@ -104,6 +104,27 @@
   gap: 7px;
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1fr 1fr;
+
+  &.reverse {
+    grid-auto-flow: column dense;
+    grid-template-columns: 1fr 1.5fr;
+
+    .article_articleImage {
+      &:first-child {
+        grid-row: 1 / 1;
+      }
+      &:nth-child(2) {
+        grid-row: 1 / 3;
+
+        img {
+          height: 100%;
+        }
+      }
+      &.big {
+        grid-row: 1 / 3;
+      }
+    }
+  }
 }
 
 .article_articleImage {

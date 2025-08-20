@@ -1,0 +1,11 @@
+= link_to article_path(article.id), data: { turbo: false } do
+  .article_articleImages{class: ('reverse' if i % 2 == 0)}
+    - if article.images.length <= 1
+      - article.images.each do |image|
+        .article_articleImage.big
+          = image_tag image
+    - else 
+      - article.images.each_with_index do |image, i|
+        .article_articleImage
+          = image_tag image
+        - break if i== 2

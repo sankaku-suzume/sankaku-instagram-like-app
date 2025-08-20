@@ -37,6 +37,8 @@
           %span#profilePage_followingsCount= user.followings.count
           %br/
           %span.profilePage_user_unit Following
-
+  .profilePage_articles
+    - user.articles.each_with_index.reverse_each do |article, i|
+      = render 'commons/article_images', article: article, i: i
 
 = javascript_pack_tag 'profile'
