@@ -22,4 +22,14 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   belongs_to :user
+
+  def random_liked_user(article)
+    likes = article.likes.all
+    random_like = likes.offset(rand(likes.count)).first
+    if likes.count == 1 then
+      "#{random_like.user.account} liked this post!"
+    elsif likes.count > 1 then
+      "#{random_like.user.account} and #{likes.count - 1} other liked this post!"
+    end
+  end
 end
