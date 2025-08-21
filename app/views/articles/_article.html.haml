@@ -32,7 +32,7 @@
         = image_tag 'Comment.png'
     = link_to "https://twitter.com/share?url=https://hogehoge.com#{ article_path(article) }", target: '_blank', class: 'article_articleShareIcon article_articleIcon' do
       = image_tag 'share.png'
-  .article_articleLikesCount Jasmine and 12,000 other liked your post
+  .article_articleLikesCount= article.random_liked_user(article)
   .article_articleComments
     .article_articleComment
       .article_articleCommentUser= article.user.account
