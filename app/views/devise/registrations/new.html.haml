@@ -14,7 +14,9 @@
       = f.label :password
       %br/
       = f.password_field :password, autocomplete: "new-password", class: 'text'
-   
+
+    = link_to "Sign In", new_user_session_path, class: 'sign_in'
+
     .actions
       = f.submit "CREATE ACCOUNT", class: 'btn-primary'
 
