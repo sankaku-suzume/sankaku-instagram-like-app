@@ -13,4 +13,5 @@
 
     .actions
       = f.submit "LOGIN", class: 'btn-primary'
- 
+    
+  = button_to 'GUEST LOGIN', users_guest_sign_in_path, method: :post, class: 'btn btn-guest'
