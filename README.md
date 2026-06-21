@@ -34,6 +34,7 @@
 ![Static Badge](https://img.shields.io/badge/VSCode-blue)
 
 <br>
+
 ## アプリ機能
 
 | 機能           | 詳細                                                                                                                                                                                                         |
