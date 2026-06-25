@@ -6,4 +6,9 @@
   font-size: 11px;
   color: #CCC;
   margin-top: 16px;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }

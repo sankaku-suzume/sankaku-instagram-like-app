@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   devise_for :users, controllers:  {
-    registrations: 'user/registrations'
+    registrations: 'users/registrations'
   }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  root 'apps/timelines#show'
+  root 'articles#index'
 
   resources :articles do
     resources :comments, only: [ :index, :create ]
